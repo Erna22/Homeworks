@@ -1,0 +1,322 @@
+<head>
+    <style>
+
+    * {
+        box-sizing: border-box;
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .add-product,
+    .list-products,
+    .shopping-cart {
+        width: 33.33%;
+        height: 100vh;
+        overflow: scroll;
+    }
+
+    .add-product {
+        padding: 30px;
+    }
+
+    .add-product form div {
+        margin-bottom: 15px;
+    }
+
+    .add-product label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .add-product input,
+    .add-product textarea {
+        width: 100%;
+        border: 1px solid #eee;
+        background: #fff;
+        border-radius: 3px;
+        padding: 8px;
+        font-size: 14px;
+        outline: none;
+        letter-spacing: .5px;
+    }
+
+    .add-product button {
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+        margin-top: 15px;
+        background: #0A9CE9;
+        color: #fff;
+        padding: 10px 0;
+        cursor: pointer;
+        font-weight: 100;
+    }
+
+    .list-products {
+        padding: 30px;
+        background: #F6F7F9;
+    }
+
+    .product {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+        margin-bottom: 20px;
+    }
+
+    .product img {
+        width: 60%;
+    }
+
+    .product p {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .details-button,
+    .buy-button,
+    .shopping-cart-summary button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #eee;
+        color: #666;
+        font-weight: 100;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    .details-button:hover,
+    .buy-button:hover {
+        transition: opacity .3s ease-in;
+        opacity: .7;
+    }
+
+    .details-button {
+        background: transparent;
+    }
+
+    .buy-button,
+    .shopping-cart-summary button {
+        background: #44E19F;
+        color: #fff;
+        border: none;
+    }
+
+    .shopping-cart {
+        position: relative;
+        padding: 20px;
+    }
+
+    .shopping-cart-product {
+        margin-bottom: 10px;
+    }
+
+    .product-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+        border-radius: 3px;
+    }
+
+    .product-info img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .product-info div h3{
+        font-weight: 100;
+        margin-bottom: -10px;
+    }
+
+    .product-count {
+        display: inline-block;
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+        margin-top: -30px;
+    }
+
+    .product-count button {
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid #eee;
+        border-radius: 3px;
+    }
+
+    .shopping-cart-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 20px;
+    }
+
+    .shopping-cart-summary button {
+        padding: 10px;
+    }
+
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 10px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+position: relative;
+background-color: #fefefe;
+margin: auto;
+padding: 0;
+border: 1px solid #888;
+width: 40%;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+-webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.4s;
+animation-name: animatetop;
+animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+color: white;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+.modal-header {
+padding: 2px 16px;
+background-color: #5cb85c;
+color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+padding: 2px 16px;
+background-color: #5cb85c;
+color: white;
+}
+</style>
+</head>
+
+
+<div class="container">
+    <div class="add-product">
+        <form>
+            <div>
+                <label>Product name:</label>
+                <input type="text" id="productName" placeholder="Casio Watch" />
+            </div>
+
+            <div>
+                <label>Product description:</label>
+                <textarea id="productDescription" placeholder="Sample description..."></textarea>
+            </div>
+
+            <div>
+                <label>Product image:</label>
+                <input type="file" id="productFile" onchange="previewFile()"><br>
+                <img src="" style="display:none" id="img" height="200" alt="Image preview...">
+            </div>
+
+            <div>
+                <label>Product price:</label>
+                <input type="number" id="productPrice" min="0" placeholder="33.50" />
+            </div>
+
+
+            <div>
+                <label>First name:</label>
+                <input type="text" id="customerFirstName" placeholder="Your name" />
+            </div>
+
+            <div>
+                <label>Last name:</label>
+                <input type="text" id="customerLastName" placeholder="Your last name" />
+            </div>
+
+            <button onclick="onAdd(); return false;">Add</button>
+        </form>
+    </div>
+
+    <div class="list-products" id="htmlText">
+
+    </div>
+
+    <div class="shopping-cart">
+        <div class="shopping-cart-products" id="buyItemHtml">
+
+        </div>
+        <div class="shopping-cart-summary">
+            <div>Total: <b>$ <span id="total">0</span></b></div>
+            <div><button onclick="purchase()">Purchase</button></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Watch you selected</h2>
+        </div>
+        <div class="modal-body">
+            <div id="modalHtml"></div>
+        </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="exercise1.js"></script>
