@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link rel="stylesheet" href="exercise2.css">
+</head>
+<body>
+    <div class="box">
+        <audio id="audio" src="" ></audio>
+        <div class="box-keys">
+            <button type="button" value="Q" onclick="setSound('Q')">Q</button>
+            <button type="button" value="W" onclick="setSound('W')">W</button>
+            <button type="button" value="E" onclick="setSound('E')">E</button>
+
+
+            <button type="button" value="A" onclick="setSound('A')">A</button>
+            <button type="button" value="S" onclick="setSound('S')">S</button>
+            <button type="button" value="D" onclick="setSound('D')">D</button>
+
+
+            <button type="button" value="Z" onclick="setSound('Z')">Z</button>
+            <button type="button" value="X" onclick="setSound('X')">X</button>
+            <button type="button" value="C" onclick="setSound('C')">C</button>
+        </div>
+        <div class="box-actions">
+           <div>
+               <h4>Power</h4>
+               <label class="switch">
+                   <input id="soundOn"
+                          type="checkbox"
+                          onclick="buttonOn()">
+                   <span class="slider round"></span>
+               </label>
+           </div>
+            <div class="sound-name" id="soundName">&nbsp</div>
+            <div class="slidecontainer">
+                <p id="audioPercent"></p>
+                <input id="volumeRange"
+                       type="range"
+                       min="1"
+                       max="100"
+                       value="50"
+                       onchange="changeVolume()"
+                >
+            </div>
+            <div>
+                <h4>Bank</h4>
+                <label class="switch">
+                    <input id="bankOn"
+                           type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <script src="exercise2.js"></script>
+</body>
+</html>
