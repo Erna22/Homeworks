@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link rel="stylesheet" href="exercise3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <div class="content">
+        <div class="page-header">
+            <div class="text-bordered">Available budget in <span id="currentMonth"></span></div>
+            <div class="text-bordered" id="budget"></div>
+            <div class="income-result result">Income
+                <div class="inline-block float-right">+<span id="incomeSum"></span></div>
+            </div>
+            <div class="expanse-result result">Expanses
+                <div class="inline-block float-right margin-10">
+                    <span  class="float-left">-</span><span class="float-left" id="expanseSum"></span> <span class="percent float-right" id="expansePercent"></span>
+                </div>
+            </div>
+        </div>
+        <div class="page-form">
+            <div class="div-centered">
+                <form class="form-inline" action="/action_page.php">
+                    <select id="currency" onchange="onCurrencyChange()">
+                        <option value="&#8364;" selected="selected">&#8364;</option>
+                        <option value="$">$</option>
+                        <option value="&#163;">&#163;</option>
+                    </select>
+                    <select id="sign">
+                        <option value="+" selected="selected">+</option>
+                        <option value="-">-</option>
+                    </select>
+                    <input type="text" id="description" placeholder="Add description" name="description">
+                    <input type="text" id="value" placeholder="Value" name="value">
+                    <button type="button" class="add-button" onclick="onAdd()">
+                        <i class="fa fa-check-circle check-circle"></i> Add
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="page-content">
+            <div>
+                <h1 class="float-left color-green">INCOME</h1>
+                <table id="income" class="expanse-table">
+                </table>
+            </div>
+            <div>
+                <h1 class="float-left color-red">EXPANSES</h1>
+                <table id="expanse" class="expanse-table">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="exercise3.js"></script>
+</body>
+</html>

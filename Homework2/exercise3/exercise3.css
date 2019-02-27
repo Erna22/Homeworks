@@ -1,0 +1,173 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+.content {
+    font-family: Calibri;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 6fr);
+    height: 100%;
+}
+.text-bordered{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.page-header {
+    font-size: 25px;
+    display: grid;
+    grid-gap: 6%;
+    padding: 5%;
+    text-align: center;
+    margin: 0 auto;
+}
+.page-header::after{
+    content: "";
+    background: url("images/dollar.jpg");
+    position: absolute;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    height: 45%;
+}
+.page-header > *{
+    color: white;
+    font-weight: bold;
+}
+
+.page-form {
+    background-color: #d9d9d92e;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+    grid-gap: 6%;
+    padding: 6%;
+    text-align: center;
+}
+
+.form-inline > * {
+    font-size: 20px;
+    margin: 0.6%;
+    padding: 0.3%;
+}
+.check-circle {
+    color: #fffff2;
+}
+.add-button {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(28, 184, 65);
+}
+.percent{
+    position: absolute;
+    font-size: small;
+    background:#ffffff4f;
+    padding: 2px;
+    margin: 0.3%;
+    color: white;
+    border-radius: 3px;
+}
+.expanse-result{
+    background: #ed304ad6;
+}
+.income-result{
+    background: #00c888b0;
+}
+.result{
+    text-align: left;
+    color: white;
+    padding: 2% 5%;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.inline-block {
+    display: inline-block;
+}
+.margin-10{
+    margin-right: 10%;
+}
+.div-centered{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.expanse-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.expanse-table td, .expanse-table th {
+    border: 1px solid #ddd;
+    padding: 8px !important;
+}
+
+.expanse-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.expanse-table tr:hover {background-color: #ddd;}
+
+.expanse-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+.color-green{
+    color: #00BD9D;
+}
+.color-red{
+    color: #e24356;
+}
+.percent-red{
+    position: absolute;
+    font-size: small;
+    background: #e27d7d4f;
+    padding: 2px;
+    margin-left: 1%;
+    color: #d83939;
+    border-radius: 3px;
+}
+.margin-15{
+    margin-right:15%;
+}
+.delete-btn{
+    position: absolute;
+    font-size: small;
+    background: #e27d7d4f;
+    padding: 2px;
+    margin-left: 4%;
+    color: #d83939;
+    border-radius: 3px;
+}
